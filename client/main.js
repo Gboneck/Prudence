@@ -9,6 +9,10 @@ Template.registerHelper('fromNow', function (date) {
 });
 
 Template.body.events({
+	'keypress textarea'(e, i) {
+		if (e.keyCode == 13)
+			$('#messageForm').submit();
+	},
 	'submit form'(e, i) {
 		e.preventDefault();
 		Messages.insert({
