@@ -1,4 +1,8 @@
-<body>
+<template name="layout">
+{{> yield}}
+</template>
+
+<template name="operator">
 
   <!--<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -21,7 +25,7 @@
   </div>-->
 <div class="layout container-fluid">
   <div class="row">
-    <div class="col-sm-2 messages">
+    <!--<div class="col-sm-2 messages">
 
       <div class="nxt-msg">
         <div class="chat-header clearfix">
@@ -75,9 +79,9 @@
         <p>Their response to the last interaction</p>
       </div>
       
-    </div>
+    </div>-->
 
-    <div class="col-sm-5 chat">
+    <div class="col-sm-7 chat">
       <div class="chat-history">
         <ul>
           {{#each messages}}
@@ -99,67 +103,155 @@
     </div>
 
     <div class="col-sm-5 info">
-      <div>
+      
               <div class="title">
                 <h1>William Darfur</h1>
                 <h1><small>Things to keep in mind about William</small></h1>
               </div>
 
-                <div class="button-container">
-                  <div class='button -border center left-side'>Important Notes</div>
-                  <div class='button center-button -border center '>FAQ</div>
-                  <div class='button -border center right-side'>Adventures</div>
+                <!--<div class="button-container">
+                  <div class='button -border center left-side' aria-controls="important" role="tab" data-toggle="tab">Important Notes</div>
+                  <div class='button center-button -border center ' aria-controls="faq" role="tab" data-toggle="tab">FAQ</div>
+                  <div class='button -border center right-side' aria-controls="adventures" role="tab" data-toggle="tab">Adventures</div>
+                </div>-->
+
+                <div>
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active -border center left-side"><a href="#important" aria-controls="important" role="tab" data-toggle="tab">Important</a></li>
+                <li role="presentation" class="center-button -border center"><a href="#faq" aria-controls="faw" role="tab" data-toggle="tab">FAQ</a></li>
+                <li role="presentation" class="center-button -border center"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Unknown</a></li>
+                <li role="presentation" class="-border center right-side"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Adventures</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active fade" id="important">
+                  <div class="important-notes"> 
+                      <h4>Important:</h4>
+                        <div class="well">
+                          <ul>
+                          {{> loginButtons}}
+                            <li>like birds</li>
+                            <li>Eats pizza</li>
+                          </ul>
+                        </div>
+
+                        <h4>Family Important:</h4>
+                        <div class="well">
+                          <ul>
+                            <li>Brother = Artist</li>
+                            <li>Mother = Lawyer</li>
+                          </ul>
+                        </div>
+
+                        <h4>Interests:</h4>
+                        <div class="well">
+                          <ul>
+                            <li>Plants - growing vegetables</li>
+                            <li>Personal Growth</li>
+                          </ul>
+                        </div>
+
+                        <h4>Strengths:</h4>
+                        <div class="well">
+                          <ul>
+                            <li>Programs in Python</li>
+                            <li>Athletic - runs mile in 4min</li>
+                          </ul>
+                        </div>
+
+                        <h4>Weaknesses:</h4>
+                        <div class="well">
+                          <ul>
+                            <li>Addicted to Cigarettes</li>
+                            <li>Eats pizza</li>
+                          </ul>
+                        </div>
+                    </div>
                 </div>
-        
-        <hr>
 
-        <input type="text" class="notes-search" name="search" placeholder="Search..">
-      </div>
+                <div role="tabpanel" class="tab-pane fade" id="faq">
+                  <input type="text" class="notes-search" name="search" placeholder="Search..">
+                    <div class="faq-notes"> 
+                      <h4><b>Q:</b>How could your day have been better?</h4>
+                        <div class="well">
+                          <b>William:</b><p>I think if I had talked with Sarah about how I really felt about the business meeting that things would have been a lot smoother.</p>
+                        </div>
 
-          <div class="notes">
+                      <h4><b>Q:</b>What's your favorite color?</h4>
+                        <div class="well">
+                          <b>William:</b><p>Purple, although blue is a close second!</p>
+                        </div>
 
-            
-            <h4><b>Q:</b>How could your day have been better?</h4>
-              <div class="well">
-                <b>William:</b><p>I think if I had talked with Sarah about how I really felt about the business meeting that things would have been a lot smoother.</p>
-              </div>
+                      <h4><b>Q:</b>If you could only eat one food for the rest of your life, what food would you eat?</h4>
+                        <div class="well">
+                          <b>William:</b><p>Pizza, since it can have many different toppings on it, I feel that would give me the best variety... or steak.</p>
+                        </div>
 
-            <h4><b>Q:</b>What's your favorite color?</h4>
-              <div class="well">
-                <b>William:</b><p>Purple, although blue is a close second!</p>
-              </div>
+                      <h4><b>Q:</b>Kill, bang, marry: Oprah, George Bush, Jesus Christ.</h4>
+                        <div class="well">
+                          <b>William:</b><p>Marry Jesus, kill Bush, Marry Oprah.. I feel like Gay jesus should be a thing</p>
+                        </div>
 
-            <h4><b>Q:</b>If you could only eat one food for the rest of your life, what food would you eat?</h4>
-              <div class="well">
-                <b>William:</b><p>Pizza, since it can have many different toppings on it, I feel that would give me the best variety... or steak.</p>
-              </div>
+                      <h4><b>Q:</b>How could your day have been better?</h4>
+                        <div class="well">
+                          <b>William:</b><p>I think if I had talked with Sarah about how I really felt about the business meeting that things would have been a lot smoother.</p>
+                        </div>
 
-            <h4><b>Q:</b>Kill, bang, marry: Oprah, George Bush, Jesus Christ.</h4>
-              <div class="well">
-                <b>William:</b><p>Marry Jesus, kill Bush, Marry Oprah.. I feel like Gay jesus should be a thing</p>
-              </div>
+                      <h4><b>Q:</b>What's your favorite color?</h4>
+                        <div class="well">
+                          <b>William:</b><p>Purple, although blue is a close second!</p>
+                        </div>
 
-            <h4><b>Q:</b>How could your day have been better?</h4>
-              <div class="well">
-                <b>William:</b><p>I think if I had talked with Sarah about how I really felt about the business meeting that things would have been a lot smoother.</p>
-              </div>
+                      <h4><b>Q:</b>If you could only eat one food for the rest of your life, what food would you eat?</h4>
+                        <div class="well">
+                          <b>William:</b><p>Pizza, since it can have many different toppings on it, I feel that would give me the best variety... or steak.</p>
+                        </div>
 
-            <h4><b>Q:</b>What's your favorite color?</h4>
-              <div class="well">
-                <b>William:</b><p>Purple, although blue is a close second!</p>
-              </div>
+                      <h4><b>Q:</b>Kill, bang, marry: Oprah, George Bush, Jesus Christ.</h4>
+                        <div class="well">
+                          <b>William:</b><p>Marry Jesus, kill Bush, Marry Oprah.. I feel like Gay jesus should be a thing</p>
+                        </div>
+                    </div>
+                </div>
 
-            <h4><b>Q:</b>If you could only eat one food for the rest of your life, what food would you eat?</h4>
-              <div class="well">
-                <b>William:</b><p>Pizza, since it can have many different toppings on it, I feel that would give me the best variety... or steak.</p>
-              </div>
+                <div role="tabpanel" class="tab-pane fade" id="messages">wdfgsdf</div>
+                <div role="tabpanel" class="tab-pane fade" id="settings">
+                Coming soon :)
+                </div>
 
-            <h4><b>Q:</b>Kill, bang, marry: Oprah, George Bush, Jesus Christ.</h4>
-              <div class="well">
-                <b>William:</b><p>Marry Jesus, kill Bush, Marry Oprah.. I feel like Gay jesus should be a thing</p>
-              </div>
-          </div>
     </div>
   </div>
 </div>
-</body>
+</div>
+</div>
+</template>
+
+<template name="user">
+<div class="layout container-fluid">
+  <div class="row">
+  <div class="col-sm-12 chat">
+      <div class="chat-history">
+        <ul>
+          {{#each messages}}
+            {{#if prudence}}{{> prudenceMessage message=this}}{{else}}{{>userMessage message=this}}{{/if}}
+          {{/each}}
+        </ul>
+        
+      </div>
+
+      <form class="chat-message clearfix" id="messageForm">
+        <textarea name="message" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+                
+        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+        <i class="fa fa-file-image-o"></i>
+        
+        <input type="submit" value="Send" />
+
+      </form>
+    </div>
+    </div>
+</div>
+</template>

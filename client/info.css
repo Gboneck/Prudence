@@ -292,12 +292,22 @@ body.linked p {
     box-shadow: none;
 }
 
-.notes {
+.faq-notes {
   text-align:left;
   position: absolute;
-  top: 270px;
+  top: 220px;
   bottom: 0px;
   overflow-y: auto;
+  width: 95%
+}
+
+.important-notes {
+  text-align:left;
+  position: absolute;
+  top: 175px;
+  bottom: 0px;
+  overflow-y: auto;
+  width: 95%;
 }
 
 .notes .important {

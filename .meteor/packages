@@ -23,3 +23,6 @@ mquandalle:jade
 less
 twbs:bootstrap
 momentjs:moment
+iron:router
+accounts-ui
+accounts-facebook

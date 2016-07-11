@@ -1,4 +1,4 @@
-Template.body.helpers({
+Template.operator.helpers({
 	messages() {
 		return Messages.find();
 	}
@@ -8,7 +8,7 @@ Template.registerHelper('fromNow', function (date) {
 	return moment(date).fromNow()
 });
 
-Template.body.events({
+Template.operator.events({
 	'keypress textarea'(e, i) {
 		if (e.keyCode == 13)
 			$('#messageForm').submit();
@@ -25,4 +25,13 @@ Template.body.events({
 	}
 });
 
+Template.operator.onRendered(function () {
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+})
 
+Router.configure({layoutTemplate: 'layout'});
+Router.route('/', { name: 'operator'})
+Router.route('/user', { name: 'user'})
