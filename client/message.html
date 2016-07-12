@@ -12,7 +12,7 @@
 <template name="userMessage">
   <li>
     <div class="message-data">
-      <span class="message-data-name"><i class="fa fa-circle online"></i> William</span>
+      <span class="message-data-name"><i class="fa fa-circle online"></i> {{name}}</span>
       <span class="message-data-time">{{fromNow message.created}}</span>
     </div>
     <div class="message my-message">{{message.text}}</div>

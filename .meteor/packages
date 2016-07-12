@@ -26,3 +26,5 @@ momentjs:moment
 iron:router
 accounts-ui
 accounts-facebook
+accounts-password
+alanning:roles

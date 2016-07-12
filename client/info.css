@@ -93,6 +93,15 @@ body.linked p {
   overflow-y: auto;
 }
 
+.nxt-msg.active {
+  background-color: #3498db;
+
+}
+
+.nxt-msg.active a {
+  color: #fff;
+}
+
 .nxt-msg p {
     text-align: left;
 }

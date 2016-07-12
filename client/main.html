@@ -3,7 +3,7 @@
 </template>
 
 <template name="operator">
-
+{{#if isInRole 'admin'}}
   <!--<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -25,63 +25,15 @@
   </div>-->
 <div class="layout container-fluid">
   <div class="row">
-    <!--<div class="col-sm-2 messages">
-
-      <div class="nxt-msg">
-        <div class="chat-header clearfix">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+    <div class="col-sm-2 messages">
+      {{#each users}}
+        <div class="nxt-msg {{#if active}}active{{/if}}">
+          <a href="/prudence/{{id}}">{{email}}</a>
         </div>
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      <div class="nxt-msg">
-        <p>Name of User</p>
-        <p>Their response to the last interaction</p>
-      </div>
-      
-    </div>-->
+      {{/each}}
+    </div>
 
-    <div class="col-sm-7 chat">
+    <div class="col-sm-6 chat">
       <div class="chat-history">
         <ul>
           {{#each messages}}
@@ -102,7 +54,7 @@
       </form>
     </div>
 
-    <div class="col-sm-5 info">
+    <div class="col-sm-4 info">
       
               <div class="title">
                 <h1>William Darfur</h1>
@@ -233,6 +185,7 @@
 </div>
 </div>
 </div>
+{{/if}}
 </template>
 
 <template name="user">
